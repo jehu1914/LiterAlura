@@ -4,7 +4,7 @@
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Desenvolvedor
 
 | [<img src="https://avatars.githubusercontent.com/u/118707461?v=4" width=115><br><sub>Victor Silot</sub>](https://github.com/jehu1914) |
 | :---: |
