@@ -138,18 +138,36 @@ public class LiterAluraController {
     }
 
     private void buscarAutor() {
-        System.out.print("Digite o nome do autor: ");
-        String nome = scanner.nextLine();
-        Optional<Autor> autor = autorRepo.findByNomeIgnoreCase(nome);
+        System.out.print("Digite parte do nome do autor: ");
+        String nomeParcial = scanner.nextLine();
 
-        if (autor.isPresent()) {
-            System.out.println("Autor encontrado:");
-            System.out.println(autor.get());
-            autor.get().getLivros().forEach(System.out::println);
+        List<Autor> autores = autorRepo.findByNomeContainingIgnoreCase(nomeParcial);
+
+        if (autores.isEmpty()) {
+            System.out.println("Nenhum autor encontrado.");
         } else {
-            System.out.println("Autor não encontrado.");
+            autores.forEach(autor -> {
+                System.out.println("\nAutor encontrado:");
+                System.out.println(autor);
+                autor.getLivros().forEach(System.out::println);
+            });
         }
     }
+
+
+//    private void buscarAutor() {
+//        System.out.print("Digite o nome do autor: ");
+//        String nome = scanner.nextLine();
+//        Optional<Autor> autor = autorRepo.findByNomeIgnoreCase(nome);
+//
+//        if (autor.isPresent()) {
+//            System.out.println("Autor encontrado:");
+//            System.out.println(autor.get());
+//            autor.get().getLivros().forEach(System.out::println);
+//        } else {
+//            System.out.println("Autor não encontrado.");
+//        }
+//    }
 
     private void estatisticas() {
         long totalLivros = livroRepo.count();
