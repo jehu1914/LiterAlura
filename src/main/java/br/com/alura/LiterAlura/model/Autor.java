@@ -43,6 +43,28 @@ public class Autor {
 
     @Override
     public String toString() {
-        return "Autor: " + nome + " (" + anoNascimento + " - " + (anoFalecimento != null ? anoFalecimento : "Presente") + ")";
+        return "\nAutor: " + nome +
+                "\nAno de nascimento: " + anoNascimento +
+                "\nAno de falecimento: " + (anoFalecimento != null ? anoFalecimento : "Ainda vivo") +
+                "\n";
     }
+
+//    @Override
+//    public String toString() {
+//        StringBuilder sb = new StringBuilder();
+//        sb.append("Autor: ").append(nome).append("\n");
+//        sb.append("Ano de nascimento: ").append(anoNascimento).append("\n");
+//        sb.append("Ano de falecimento: ").append(
+//                anoFalecimento != null ? anoFalecimento : "Ainda vivo"
+//        ).append("\n");
+//        sb.append("Quantidade de livros cadastrados: ").append(
+//                livros != null ? livros.size() : 0
+//        );
+//        return sb.toString();
+//    }
+
+//    @Override
+//    public String toString() {
+//        return "Autor: " + nome + " (" + anoNascimento + " - " + (anoFalecimento != null ? anoFalecimento : "Presente") + ")";
+//    }
 }

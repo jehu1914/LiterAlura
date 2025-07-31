@@ -57,6 +57,19 @@ public class Livro {
 
     @Override
     public String toString() {
-        return "Libro: " + titulo + " - " + idioma + " (" + downloads + " descargas)";
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n"); // Espacio al inicio
+        sb.append("📖 Livro: ").append(titulo).append("\n");
+        sb.append("🌐 Idioma: ").append(idioma).append("\n");
+        sb.append("⬇️ Downloads: ").append(downloads).append("\n");
+        sb.append("✍️ Autor: ").append(autor != null ? autor.getNome() : "Desconhecido").append("\n");
+        sb.append("\n"); // Línea en blanco al final
+        return sb.toString();
     }
+
+
+//    @Override
+//    public String toString() {
+//        return "Libro: " + titulo + " - " + idioma + " (" + downloads + " descargas)";
+//    }
 }
